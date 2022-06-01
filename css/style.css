@@ -1,0 +1,1617 @@
+@charset "UTF-8";
+/* 공통 */
+#wrap{
+  min-height: 550px;
+}
+
+#header .logo{
+  position: fixed;
+  top: 50px;
+  left: 60px;
+  width: 99px;
+  height: 34px;
+  z-index: 99;
+}
+
+#header .logo a{
+  text-decoration: none;
+  outline: 0;
+  color: rgba(0, 0, 0);
+}
+
+#header .logo a > img{
+  vertical-align: middle;
+  width: 100%;
+}
+
+.nav{
+  width: 560px;
+  position: fixed;
+  top: 50px;
+  left: 45%;
+  transform: translate(-50%, 0);
+  z-index: 99;
+}
+
+.nav ul li{
+  float: left;
+  margin-right: 4em;
+}
+
+.nav ul li a{
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  font-family: "ProximaNova";
+}
+
+.nav ul li.on a{
+  font-weight: 700;
+}
+
+.nav ul li.on a::after{
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 2px;
+  transition: all 0.2s;
+}
+
+.navBtn{
+  position: fixed;
+  top: 50%;
+  right: 8em;
+  transform: translate(0, -50%);
+  z-index: 99;
+}
+
+.navBtn ul li{
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.navBtn ul li.on{
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.navBtn ul li a{
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navBtn ul li.on a{
+  color: greenyellow;
+  font-weight: bold;
+  background: #fff;
+}
+
+.btn-wrap{
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  z-index: 99;
+}
+
+.btn-wrap a{
+  width: 6.785em;
+  height: 2.285em;
+  line-height: 2.285em;
+  margin-right: 1.42em;
+  display: block;
+  float: left;
+  font-size: 1.4em;
+  color: #fff;
+  text-align: center;
+  border-radius: 100px;
+  font-family: "ProximaNova";
+  font-weight: 700;
+}
+
+.btn-wrap a.help{
+  text-indent: 20px;
+  background: url('../img/help.png') 20px center no-repeat #4517C4;
+  background-size: 16px;
+}
+
+.btn-wrap a.col{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+}
+
+.btn-wrap a.bg{
+  background: #4517C4;
+}
+
+.btn-wrap a:last-child{
+  margin-right: 0;
+}
+
+.call-nav{
+  position: fixed;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 0.3s ease-in;
+  top: 25px;
+  right: 5%;
+  display: none;
+}
+
+.call-nav > div{
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 50px;
+  transition: all 0.1s ease-in;
+}
+
+.call-nav .bar1{
+  top: 0px;
+  right: 0;
+}
+
+.call-nav .bar2{
+  width: 70%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.call-nav.on > div:nth-child(2){
+  width: 100%
+}
+
+.call-nav .bar3{
+  bottom: 0;
+  left: 0;
+}
+
+.scroll-down{
+  display: block;
+  width: 115px;
+  height: 52px;
+  background: url('../img/scroll_down.png') center no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 99;
+}
+
+.credit{
+  /* display: none; */
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.64);
+  position: fixed;
+  left: 80px;
+  bottom: 40px;
+  z-index: 99;
+}
+
+.copyright{
+  /* display: block; */
+  display: none;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.64);
+  position: fixed;
+  left: 80px;
+  bottom: 40px;
+  z-index: 99;
+}
+
+/* main1 */
+.mainbox-wrap .mainbox{
+  height: 100vh;
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainbox .video-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  background: #000;
+}
+
+.mainbox .video-box video{
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  height: auto !important;
+  width: auto !important;
+  min-width: 100%;
+  min-height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  background-position: center center;
+  background-size: contain;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.video-cover{
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  position: absolute;
+  background: rgba(106, 122, 232, 0.5);
+}
+
+.con-wrap{
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 6;
+}
+
+.mainbox .main-text{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  font-size: 6em;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -5px;
+  z-index: 10;
+}
+
+.mainbox .main-text span{
+  font-weight: 700;
+  color: #fff;
+}
+
+.service-slot{
+  width: 300px;
+  height: 100px;
+  background: url('../img/slogan_slot.gif');
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+
+.mainbox_02{
+  background: url('../img/main_02.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainbox_03{
+  background: url('../img/main_03.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainbox_04{
+  background: url('../img/main_04.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainbox_05{
+  background: url('../img/main_05.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainbox .mainbox-text{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff;
+}
+
+.mainbox .mainbox-text .block{
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.mainbox .mainbox-text .eng-text{
+  margin-top: 15px;
+  font-size: 2.5em;
+  font-family: "ProximaNova";
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.mainbox .mainbox-text .eng-text::before{
+  content: "[";
+  display: block;
+  position: absolute;
+  top: 44%;
+  left: -35px;
+  transform: translate(0, -50%);
+  font-size: 1.6em;
+  color: #fff;
+  font-weight: 700;
+}
+
+.mainbox .mainbox-text .eng-text::after{
+  content: "]";
+  display: block;
+  position: absolute;
+  top: 44%;
+  right: -35px;
+  transform: translate(0, -50%);
+  font-size: 1.6em;
+  color: #fff;
+  font-weight: 700;
+}
+
+.mainbox .mainbox-subtext{
+  position: absolute;
+  top: 55%;
+  right: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.mainbox .mainbox-subtext .text-wrap{
+  font-size: 6em;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -5px;
+  background: url('../img/view_more_btn.png') left 0 bottom 0 no-repeat;
+  background-size: contain;
+  padding-bottom: 50px;
+}
+
+.mainbox .mainbox-subtext .text-wrap span{
+  color: #fff;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.mainbox .mainbox-subtext .sub-text{
+  float: right;
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.footer{
+  padding: 50px 0;
+  z-index: 98;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.footer .inner{
+  width: 90%;
+  margin: auto;
+}
+
+.footer .logo{
+  float: left;
+  width: 72px;
+  margin-right: 80px;
+  margin-top: 5px;
+}
+
+.footer .contents{
+  float: left;
+}
+
+.footer .contents .link a{
+  font-size: 12px;
+  color: #fff;
+  margin-right: 8px;
+  padding-right: 8px;
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+
+.footer .contents .link a::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  background: rgba(255, 255, 255, 0.3);
+  width: 1px;
+  height: 10px;
+}
+
+.footer .contents .link a:last-child::after{
+  content: none;
+}
+
+.footer .contents .link::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.footer .contents .footer_copy{
+  font-family: "ProximaNova";
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 17px;
+}
+
+.modal-bg.on{
+  z-index: 98;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.modal-bg{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.service-box.on{
+  right: 0;
+  transition: 0.3s ease-out;
+}
+
+.service-box{
+  width: 800px;
+  height: 100vh;
+  background: #141313;
+  position: fixed;
+  top: 0;
+  right: -800px;
+  z-index: 99;
+  transition: 0.3s ease-out;
+}
+
+.modal-box{
+  overflow-y: scroll;
+}
+
+.service-box > .inner{
+  padding: 40px 60px;
+  position: relative;
+}
+
+.service-box .title{
+  font-size: 5em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px #fff;
+  font-family: "ProximaNova";
+}
+
+.modal-box .close, .modal_box .close{
+  font-size: 20px;
+  color: #fff;
+  font-family: "ProximaNova";
+  font-weight: 700;
+  padding-right: 40px;
+  background: url('../img/closeBtn.png') right 0 center no-repeat;
+  background-size: 30px;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  z-index: 9999999;
+}
+
+.modal-box .close:hover, .modal_box .close:hover{
+  background: url('../img/closeBtn_on.png') right 0 center no-repeat;
+  color: #7F60FF;
+}
+
+.service-box .sub-title{
+  font-size: 4em;
+  font-family: "ProximaNova";
+  color: #fff;
+  font-weight: 700;
+  margin-top: 50px;
+  position: relative;
+}
+
+.service-box .sub-title::after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 350px;
+  height: 5px;
+  background: #fff;
+}
+
+.service-box .con-box{
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.service-box .con-box .list-title{
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.service-box .con-box .list-title span{
+  font-size: 1.28em;
+  -webkit-text-stroke: 1px #fff;
+  font-family: "ProximaNova";
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-right: 8px;
+}
+
+.service-box .con-box .img-box{
+  margin-top: 20px;
+}
+
+.mainBox2_modal{
+  background: url('../img/modal_bg2.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainBox3_modal{
+  background: url('../img/modal_bg3.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainBox4_modal{
+  background: url('../img/modal_bg4.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainBox5_modal{
+  background: url('../img/modal_bg5.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.mainBox6_modal{
+  background: url('../img/modal_bg5.png') 0 0 no-repeat;
+  background-size: cover;
+}
+
+.sub_modal.on{
+  opacity: 1;
+  z-index: 99;
+}
+
+.sub_modal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.sub_modal > .inner{
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+
+.sub_modal > .inner .slideWrap{
+  height: 100%;
+  min-height: 880px;
+  position: relative;
+}
+
+.sub_modal > .inner .slideWrap .slideList{
+  height: 100vh;
+}
+
+.modal_box .slideList{
+  position: relative;
+}
+
+.sub_modal .mainBoxText{
+  position: absolute;
+  top: 50%;
+  left: 27%;
+  transform: translate(0, -50%);
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff;
+}
+
+.sub_modal .mainBoxText .block{
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.sub_modal .mainBoxText .engText{
+  display: inline-block;
+  font-size: 2.5em;
+  font-family: "ProximaNova";
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.sub_modal .mainBoxText .engText::before{
+  content: '[';
+  display: block;
+  position: absolute;
+  top: 43%;
+  left: -35px;
+  transform: translate(0, -50%);
+  font-size: 1.6em;
+  color: #fff;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+.sub_modal .mainBoxText .engText::after{
+  content: ']';
+  display: block;
+  position: absolute;
+  top: 40%;
+  right: -35px;
+  transform: translate(0, -50%);
+  font-size: 1.6em;
+  color: #fff;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+.sub_modal .subBoxText{
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0, -50%);
+}
+
+.sub_modal .subBoxText .title{
+  font-size: 4em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sub_modal .subBoxText .con{
+  font-size: 2em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 15px;
+}
+
+.sub_modal .subBoxText .go{
+  width: 75px;
+  height: auto;
+  margin-top: 30px;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: "ProximaNova";
+  color: #fff;
+  position: relative;
+}
+
+.sub_modal .subBoxText .go::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 12px;
+  background: url('../img/go_btn.png') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox{
+  width: 70em;
+  margin: 120px auto 0 auto;
+  position: relative;
+  background: url('../img/slide_bg.png') right 0 bottom 0 no-repeat;
+  background-size: contain;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conNum{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 5.5em;
+  font-weight: 700;
+  color: #fff;
+  font-family: "ProximaNova";
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox img{
+  width: 85%;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conText{
+  margin-top: 30px;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title{
+  width: 600px;
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title.color{
+  color: #7F60FF;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 30%;
+  height: 5px;
+  background: #fff;
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox .conText .con{
+  font-size: 2em;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 1em;
+}
+
+.sub_modal .sPage{
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translate(-50%, 0);
+  width: 50%;
+  z-index: 99;
+}
+
+.sub_modal .sPage::after{
+  content: "";
+  display: block;
+  width: 98%;
+  height: 1px;
+  background: rgba(244, 244, 244, 0.2);
+  position: absolute;
+  left: 50%;
+  top: 3px;
+  transform: translate(-50%, 0);
+  z-index: -2;
+}
+
+.sub_modal .sPage .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  color: #7F60FF;
+  font-weight: #700;
+  background: #7F60FF;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.sub_modal .sPage .swiper-pagination-bullet.swiper-pagination-bullet-active::before{
+  content: "";
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #7F60FF;
+  background: #000;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1
+}
+
+.sub_modal .sPage .swiper-pagination-bullet.swiper-pagination-bullet-active::after{
+  color: #7F60FF;
+}
+
+.sub_modal .sPage .swiper-pagination-bullet{
+  float: left;
+  margin-right: calc(25% - 15px);
+  position: relative;
+  display: block;
+  cursor: pointer;
+  opacity: 1;
+  background: #757575;
+}
+
+.sub_modal .sPage .swiper-pagination-bullet::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translate(-50%, 0);
+  color: #757575;
+  display: block;
+  width: 130px;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+.sub_modal .swiper-pagination2 .swiper-pagination-bullet:first-child::after{
+  content: "글로벌 음원 판매";
+  bottom: -43px;
+}
+
+.sub_modal .swiper-pagination2 .swiper-pagination-bullet:nth-child(2)::after{
+  content: "원스톱 발매 솔루션";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination2 .swiper-pagination-bullet:nth-child(3)::after{
+  content: "전 세계 동시 발매";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination2 .swiper-pagination-bullet:nth-child(4)::after{
+  content: "뮤직비디오 심의";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination2 .swiper-pagination-bullet:nth-child(5)::after{
+  content: "온라인 심의 시스템";
+  font-size: 12px;
+}
+
+.sub_modal .sPage .swiper-pagination-bullet:last-child{
+  margin-right: 0;
+}
+
+.sub_modal .swiper-pagination3 .swiper-pagination-bullet{
+  margin-right: calc(50% - 20px);
+}
+
+.sub_modal .swiper-pagination4 .swiper-pagination-bullet{
+  margin-right: calc(50% - 20px);
+}
+
+.sub_modal .swiper-pagination5 .swiper-pagination-bullet{
+  margin-right: calc(100% - 24px);
+}
+
+.sub_modal .swiper-pagination6 .swiper-pagination-bullet{
+  margin-right: calc(33.333% - 16px);
+}
+
+.sub_modal .swiper-pagination3 .swiper-pagination-bullet:first-child::after{
+  content: "오즈링크";
+  bottom: -43px;
+}
+
+.sub_modal .swiper-pagination3 .swiper-pagination-bullet:nth-child(2)::after{
+  content: "하나의 간결한 오즈링크";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination3 .swiper-pagination-bullet:nth-child(3)::after{
+  content: "당신 음악으로의 지름길";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination4 .swiper-pagination-bullet:first-child::after{
+  content: "뮤지션 엑셀러레이터";
+  width: 135px;
+  bottom: -43px;
+}
+
+.sub_modal .swiper-pagination4 .swiper-pagination-bullet:nth-child(2)::after{
+  content: "맞춤형 성장 프로젝트";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination4 .swiper-pagination-bullet:nth-child(3)::after{
+  content: "모든 권한은 뮤지션의 것";
+  font-size: 12px;
+}
+
+.sub_modal .swiper-pagination5 .swiper-pagination-bullet:first-child::after{
+  content: "SUBSCRIPTION";
+  width: 135px;
+  bottom: -43px;
+}
+
+.sub_modal .swiper-pagination5 .swiper-pagination-bullet:nth-child(2)::after{
+  content: "오즈 구독 요금제";
+  font-size: 12px
+}
+
+.sub_modal .swiper-pagination6 .swiper-pagination-bullet:first-child::after{
+  content: "SUBSCRIPTION";
+  width: 135px;
+  bottom: -43px;
+}
+
+.sub_modal .swiper-pagination6 .swiper-pagination-bullet:nth-child(2)::after{
+  content: "구독료 무료";
+  font-size: 12px
+}
+
+.sub_modal .swiper-pagination6 .swiper-pagination-bullet:nth-child(3)::after{
+  content: "PRO";
+  font-size: 12px
+}
+
+.sub_modal .swiper-pagination6 .swiper-pagination-bullet:nth-child(4)::after{
+  content: "BASIC";
+  font-size: 12px
+}
+
+.sub_modal > .inner .slideWrap .slideList .slideConBox.subscriptionConBox{
+  width: 98.3em;
+  color: #fff;
+}
+
+.slideConBox .subscriptionBox{
+  width: 33.3%;
+  float: left;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.slideConBox .subscriptionBox .TitleBox{
+  height: 222px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.slideConBox .subscriptionBox > div{
+  border-bottom: 1px solid #7F60FC;
+  color: #fff;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slideConBox .subscriptionBox.Box_01 .TitleBox .textArea{
+  font-size: 1.8em;
+  padding-top: 84px;
+  color: #fff;
+}
+
+.slideConBox .subscriptionBox .conBox{
+  height: 60px;
+}
+
+.slideConBox .subscriptionBox .conBox.DistrBox{
+  height: 180px;
+}
+
+.slideConBox .conBox .cateTitle{
+  width: 50%;
+  float: left;
+  color: #7F60FC;
+  line-height: 60px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.slideConBox .conBox.DistrBox .cateTitle{
+  line-height: 180px;
+}
+
+.slideConBox .conBox .cateDesc{
+  width: 50%;
+  float: right
+}
+
+.slideConBox .conBox .cateDesc li{
+  color: #fff;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.5em;
+  border-bottom: 1px solid #262626;
+  box-sizing: border-box;
+}
+
+.slideConBox .conBox .cateDesc li:last-child{
+  border-bottom: none;
+}
+
+.slideConBox .conBox.MarketBox .pointTxt{
+  color: #ff38e8;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.slideConBox .subscriptionBox .conBox.UpstreamBox{
+  height: 120px;
+  margin-bottom: 60px;
+}
+
+.slideConBox .subscriptionBox.Box_02.on{
+  border: 4px solid #fff;
+  box-sizing: border-box;
+}
+
+.slideConBox .subscriptionBox.Box_02 .TitleBox .mainTit{
+  font-size: 1.8em;
+  color: #fff;
+  padding-top: 36px;
+}
+
+.slideConBox .subscriptionBox.Box_02 .TitleBox .subscriptionArea{
+  font-size: 1.2em;
+  color: #606060;
+  padding-top: 0px;
+}
+
+.slideConBox .subscriptionBox.Box_02 .TitleBox .sizeTxt{
+  font-size: 2em;
+  color: #606060;
+  padding-top: 0px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.slideConBox .subscriptionBox.Box_02 .TitleBox .sizeTxt::after{
+  content: "";
+  display: block;
+  width: 110%;
+  height: 1px;
+  background: #606060;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slideConBox .subscriptionBox.Box_03 .TitleBox .sizeTxt::after{
+  display: none;
+}
+
+.slideConBox .subscriptionBox.Box_02 .TitleBox .linkArea a{
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 25px;
+  width: 114px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #4517c4;
+  margin-top: 20px;
+}
+
+.slideConBox .subscriptionBox.Box_02.Box_03 .TitleBox .linkArea a{
+  background-color: #757575;
+}
+
+.slideConBox .Box_02 .conBox .cateDesc{
+  width: 100%;
+  float: none;
+}
+
+.slideConBox .Box_02 .conBox .cateDesc .list_h{
+  line-height: 35px;
+}
+
+.slideConBox .Box_02 .conBox .cateDesc li .grayPoint{
+  color: #707070;
+  font-weight: normal;
+  font-size: 12px;
+  display: block;
+  line-height: 12px;
+}
+
+.slideConBox .Box_02 .conBox .cateDesc li{
+  color: #fff;
+  font-weight: normal;;
+  font-size: 14px;
+  /* line-height: 1.8; */
+}
+
+.slideConBox .Box_02.Box_03 .conBox .cateDesc li{
+  color: #707070;
+}
+
+.mainBox6_modal{
+  display: none;
+}
+
+.mainBox6_modal .slideConBox .subscriptionBox{
+  width: 100%;
+}
+
+@media screen and ( max-width: 1600px ){
+  #wrap{
+    font-size: 9px;
+  }
+
+  .nav{
+    /* width: 500px; */
+  }
+
+  .nav ul li{
+    margin-right: 4em;
+  }
+
+  .con-wrap{
+    width: 70%;
+    margin-left: 10%;
+  }
+
+  .footer .logo{
+    float: unset;
+    margin-bottom: 20px;
+  }
+
+  .footer .contents{
+    float: unset;
+    margin-bottom: 20px;
+  }
+
+  .modal-box{
+    overflow-y: scroll;
+  }
+
+  .service-box .title{
+    font-size: 2.8em;
+  }
+
+  .modal-box .close{
+    top: 24px;
+    right: 20px;
+  }
+
+  .service-box .sub-title::after{
+    width: 30%;
+  }
+
+  .sub_modal > .inner{
+    min-height: 750px;
+  }
+
+  .sub_modal > .inner .slideWrap{
+    min-height: 750px;
+  }
+
+  .sub_modal .mainBoxText .engText{
+    font-size: 2em;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox{
+    margin: 11em auto 0 auto;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox{
+    width: 80%;
+    max-width: 540px;
+    margin: 100px auto 0 auto;
+  }
+
+  .mainBox5_modal > .inner .slideWrap .slideList .slideConBox{
+    max-width: 900px;
+    width: 100%;
+    margin: 90px auto 0 auto;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox img{
+    width: 85%;
+    max-width: 500px;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title{
+    font-size: 3em;
+    width: 100%;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conText .con{
+    font-size: 1.6em;
+  }
+
+  .slideConBox .subscriptionBox .TitleBox{
+    height: 190px;
+  }
+
+  .slideConBox .subscriptionBox .conBox{
+    height: 50px;
+  }
+
+  .slideConBox .subscriptionBox .conBox.DistrBox{
+    height: 150px;
+  }
+
+  .slideConBox .conBox .cateTitle{
+    line-height: 50px;
+  }
+
+  .slideConBox .conBox.DistrBox .cateTitle{
+    line-height: 150px;
+  }
+
+  .slideConBox .conBox .cateDesc li{
+    height: 50px;
+    line-height: 48px;
+  }
+
+  .slideConBox .subscriptionBox .conBox.UpstreamBox{
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .slideConBox .subscriptionBox.Box_02 .TitleBox .mainTit{
+    padding-top: 25px;
+  }
+
+  .slideConBox .Box_02 .conBox .cateDesc .list_h{
+    line-height: 32px;
+  }
+}
+
+@media screen and ( max-width: 1300px ){
+  .nav{
+    display: none;
+  }
+}
+
+@media screen and ( max-width: 1000px ){
+  .sub_modal .mainBoxText .engText{
+    font-size: 2em;
+  }
+
+  .sub_modal .subBoxText{
+    right: 0;
+  }
+
+  .sub_modal .subBoxText .title{
+    font-size: 4em;
+    letter-spacing: -3px;
+  }
+}
+
+@media screen and ( max-width: 880px ){
+  .navBtn{
+    right: 5%;
+  }
+
+  .btn-wrap{
+    top: 52px;
+    right: 40px;
+  }
+
+  .credit{
+    left: 10%;
+  }
+
+  .mainbox .main-text{
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    padding-top: 4em;
+    font-size: 4.5em;
+  }
+
+  .mainbox .mainbox-text{
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    padding-top: 16vh;
+    font-size: 1.4em;
+    margin-left: 5%;
+  }
+
+  .mainbox .mainbox-text .block{
+    margin-left: -5%;
+  }
+
+  .mainbox .mainbox-text .eng-text{
+    font-size: 2em;
+  }
+
+  .mainbox .mainbox-subtext{
+    top: unset;
+    right: unset;
+    transform: unset;
+    font-size: 1em;
+    position: unset;
+    display: inline-block;
+    padding-top: 18vh;
+    letter-spacing: 0;
+  }
+
+  .mainbox .mainbox-subtext .text-wrap{
+    font-size: 4.5em;
+  }
+
+  .service-box{
+    width: 100%;
+    right: -880px;
+  }
+
+  .service-box > .inner{
+    padding: 20px 30px;
+  }
+
+  .service-box .title{
+    font-size: 2.8em;
+  }
+
+  .modal-box .close{
+    top: 30px;
+    right: 30px;
+  }
+
+  .service-box .title{
+    font-size: 3.5em;
+  }
+
+  .service-box .sub-title{
+    font-size: 2.5em;
+    margin-top: 2em;
+  }
+
+  .service-box .sub-title::after{
+    width: 50%;
+    height: 3px;
+  }
+
+  .modal_box .close{
+    top: 20px;
+    right: 20px;
+  }
+
+  .sub_modal .mainBoxText{
+    top: 16vh;
+    left: 26%;
+    transform: unset;
+    font-size: 1.4em;
+  }
+
+  .sub_modal .mainBoxText .engText{
+    font-size: 2em;
+  }
+
+  .sub_modal .subBoxText{
+    top: 35%;
+    right: unset;
+    left: 20%;
+    transform: unset;
+    margin-top: 7vh;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox.subscriptionConBox{
+    width: 100%;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox{
+    width: 100%;
+    margin: 20em auto 0 auto;
+  }
+
+  .mainBox6_modal > .inner .slideWrap .slideList .slideConBox{
+    /* margin: 8em auto 0 auto; */
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conNum{
+    top: -65px;
+    font-size: 4em;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox img{
+    width: 100%;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title{
+    font-size: 2.5em;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conText .title::after{
+    display: none;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .conText .con{
+    font-size: 1.5em;
+  }
+
+  .sub_modal .subBoxText .con{
+    font-size: 1.6em;
+  }
+
+  .m_block{
+    display: block;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox .subscriptionConBox{
+    width: 100%;
+  }
+}
+
+@media screen and ( max-width: 600px ){
+  #header .logo{
+    left: 30px;
+    width: 68px;
+    top: 20px;
+  }
+
+  .navBtn ul li{
+    width: 26px;
+    height: 26px;
+  }
+
+  .navBtn ul li a{
+    width: 6px;
+    height: 6px;
+  }
+
+  .btn-wrap{
+    top: 20px;
+    margin-right: 2em;
+  }
+
+  .btn-wrap a{
+    width: 5.5em;
+    height: 2em;
+    line-height: 2em;
+    margin-right: 1em;
+  }
+
+  .btn-wrap a.help{
+    text-indent: 12px;
+    background: url('../img/help.png') 10px center no-repeat #4517C4;
+  }
+
+  .btn-wrap > .inner a:nth-child(2){
+    margin-right: 0;
+  }
+
+  .btn-wrap a.service{
+    display: none;
+  }
+
+  .call-nav{
+    display: block;
+  }
+
+  .scroll-down{
+    width: 82px;
+    height: 37px;
+  }
+
+  .credit{
+    transform: rotate(-90deg);
+    left: auto;
+    right: -80px;
+    bottom: 180px;
+    width: 250px;
+  }
+
+  .copyright{
+    transform: rotate(-90deg);
+    left: unset;
+    right: -5%;
+    bottom: 75px;
+  }
+
+  .mainbox .main-text{
+    padding-top: 27vh;
+  }
+
+  .mainbox .mainbox-text .eng-text::before{
+    left: -20px;
+  }
+
+  .mainbox .mainbox-text .eng-text::after{
+    right: -20px;
+  }
+
+  .mainbox .mainbox-subtext .text-wrap{
+    font-size: 3.8em;
+  }
+
+  .service-slot{
+    width: 200px;
+    height: 60px;
+    transform: translate(-67%, 210%);
+  }
+
+  .mainbox_02{
+    background: url('../img/m_main_02.png') 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  .mainbox_03{
+    background: url('../img/m_main_03.png') 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  .mainbox_04{
+    background: url('../img/m_main_04.png') 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  .mainbox_05{
+    background: url('../img/m_main_05.png') 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  .sub_modal .mainBoxText .engText::before{
+    left: -20px;
+  }
+
+  .sub_modal .mainBoxText .engText::after{
+    right: -20px;
+  }
+
+  .mainBox5_modal{
+    display: none;
+  }
+
+  .mainBox6_modal{
+    display: block;
+  }
+}
+
+@media screen and ( max-width: 500px ){
+  .sub_modal > .inner .slideWrap{
+    min-height: unset;
+  }
+
+  .sub_modal > .inner .slideWrap .slideList .slideConBox{
+    margin: 20vh auto 0 auto;
+  }
+
+  .sub_modal .subBoxText .title{
+    font-size: 3.8em;
+  }
+
+  .sub_modal .sPage .swiper-pagination-bullet::after{
+    display: none;
+  }
+
+  .mainBox6_modal.sub_modal > .inner .slideWrap .slideList .slideConBox{
+    margin: 8vh auto 0 auto;
+  }
+
+  .sub_modal .subBoxText .title{
+    font-size: 3.8em;
+  }
+}
+
+@media screen and ( max-width: 499px ){
+  .con-wrap{
+    width: 88%;
+    margin: auto;
+  }
+
+  body{
+      overflow-y: unset;
+  }
+}
